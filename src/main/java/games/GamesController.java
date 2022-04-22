@@ -35,7 +35,7 @@ class GamesController {
     @PostMapping("/games")
     public ResponseEntity<Games> newG(@Valid @RequestBody  Games newGames){
 
-        if (repository.findById(newGames.getGame_code()).isPresent()) {
+        if (repository.findById(newGames.getGameCode()).isPresent()) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         } else {
             Games g = repository.save(newGames);

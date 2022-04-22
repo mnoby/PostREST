@@ -13,95 +13,90 @@ import javax.validation.constraints.Size;
 class Games {
 
 //    private @GeneratedValue Long id;
-    private @Id String game_code;
-    private String game_name;
-    private String pub;
-    private String cate;
-    private String plat;
+    private @Id String gameCode;
+    private String gameName;
+    private String publisher;
+    private String category;
+    private String platform;
 
     Games() {}
 
-    public Games(String game_code, String game_name, String pub, String cate, String plat) {
-        this.game_code = game_code;
-        this.game_name = game_name;
-        this.pub = pub;
-        this.cate = cate;
-        this.plat = plat;
+    public Games(String gameCode, String gameName, String publisher, String category, String platform) {
+        this.gameCode = gameCode;
+        this.gameName = gameName;
+        this.publisher = publisher;
+        this.category = category;
+        this.platform = platform;
     }
-
 
     @Size(max = 20)
     @Pattern(regexp = "^[a-zA-Z0-9]*$")
-    public String getGame_code() {
-        return game_code;
+    public String getGameCode() {
+        return gameCode;
     }
-
-    public void setGame_code(String game_code) {
-        this.game_code = game_code;
-    }
-
-    @Size(max = 50)
-    public String getGame_name() {
-        return game_name;
-    }
-
-    public void setGame_name(String game_name) {
-        this.game_name = game_name;
+    public void setGameCode(String gameCode) {
+        this.gameCode = gameCode;
     }
 
     @Size(max = 50)
-    public String getPub() {
-        return pub;
+    public String getGameName() {
+        return gameName;
     }
 
-    public void setPub(String pub) {
-        this.pub = pub;
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
     }
 
     @Size(max = 50)
-    public String getCate() {
-        return cate;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setCate(String cate) {
-        this.cate = cate;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    @Size(max = 50)
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @Size(max = 20)
-    public String getPlat() {
-        return plat;
+    public String getPlatform() {
+        return platform;
     }
 
-    public void setPlat(String plat) {
-        this.plat = plat;
+    public void setPlatform(String platform) {
+        this.platform = platform;
     }
 
     @Override
     public boolean equals(Object o) {
-
-        if (this == o)
-            return true;
-        if (!(o instanceof Games))
-            return false;
+        if (this == o) return true;
+        if (!(o instanceof Games)) return false;
         Games games = (Games) o;
-        return Objects.equals(this.game_code, games.game_code)
-                && Objects.equals(this.game_name, games.game_name) && Objects.equals(this.pub, games.pub)
-                && Objects.equals(this.cate, games.cate) && Objects.equals(this.plat, games.plat);
+        return Objects.equals(this.gameCode, games.gameCode)
+                && Objects.equals(this.gameName, games.gameName) && Objects.equals(this.publisher, games.publisher)
+                && Objects.equals(this.category, games.category) && Objects.equals(this.platform, games.platform);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.game_code, this.game_name, this.pub, this.cate, this.plat);
+        return Objects.hash(this.gameCode, this.gameName, this.publisher, this.category, this.platform);
     }
 
     @Override
     public String toString() {
         return "Games{" +
-                "game_code='" + game_code + '\'' +
-                ", game_name='" + game_name + '\'' +
-                ", pub='" + pub + '\'' +
-                ", cate='" + cate + '\'' +
-                ", plat=" + plat +
+                "gameCode='" + gameCode + '\'' +
+                ", gameName='" + gameName + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", category='" + category + '\'' +
+                ", platform='" + platform + '\'' +
                 '}';
     }
 }

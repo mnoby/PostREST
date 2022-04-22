@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "2361d940-eb02-4942-8f8e-4895842edce9",
+		"name": "AccelByte",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Games Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gameCode\": \"AccelBrawl1\",\r\n    \"gameName\": \"Accel Brawl - Rise of Bots\",\r\n    \"publisher\": \"AccelByte, Inc.\",\r\n    \"category\": \"FPS\",\r\n    \"platform\": \"PSN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
